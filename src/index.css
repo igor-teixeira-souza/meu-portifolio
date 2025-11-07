@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/*
+  Removendo estilos padrão do Vite/React para aplicar o design do portfólio.
+  O Tailwind CSS cuidará da estilização base.
+*/
