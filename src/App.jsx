@@ -1,16 +1,19 @@
-import Header from './components/Header.jsx';
-import HeroSection from './components/HeroSection.jsx';
+import HeroSection from "./components/HeroSection";
+import ServicesSection from "./components/ServicesSection";
+import ProjectsSection from "./components/ProjectsSection";
+import AboutSection from "./components/AboutSection";
+import ContactSection from "./components/ContactSection";
+import Header from "./components/Header"
 
-
-function App() {
-
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-black">
+    <>
       <Header />
       <HeroSection />
-    </div>
-  )
+      <ServicesSection />
+      <ProjectsSection />
+      <AboutSection />
+      <ContactSection />
+    </>
+  );
 }
-
-export default App
