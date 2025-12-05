@@ -40,7 +40,7 @@ const technologies = [
   { 
     name: "Levantamento de Requisitos", 
     icon: <FileText size={24} />, 
-    level: "Experiente",
+    level: "Intermediário",
     description: "Análise e documentação de sistemas",
     color: "from-purple-500 to-pink-600",
     category: "Processos"
@@ -48,7 +48,7 @@ const technologies = [
   { 
     name: "React Native", 
     icon: <Smartphone size={24} />, 
-    level: "Intermediário",
+    level: "Básico",
     description: "Aplicativos mobile multiplataforma",
     color: "from-cyan-500 to-blue-600",
     category: "Mobile"
@@ -96,17 +96,9 @@ const technologies = [
   { 
     name: "JavaScript", 
     icon: <Code2 size={24} />, 
-    level: "Avançado",
+    level: "Intermediário",
     description: "Linguagem de programação principal",
     color: "from-yellow-400 to-amber-500",
-    category: "Linguagens"
-  },
-  { 
-    name: "TypeScript", 
-    icon: <Terminal size={24} />, 
-    level: "Intermediário",
-    description: "JavaScript com tipagem estática",
-    color: "from-blue-600 to-indigo-600",
     category: "Linguagens"
   },
   { 
@@ -129,7 +121,7 @@ export default function TechnologiesSection() {
         gradient
       />
 
-      <CardsGrid cols={4} gap="gap-6">
+      <CardsGrid cols={2} gap="gap-10">
         {technologies.map((tech) => (
           <Card
             key={tech.name}

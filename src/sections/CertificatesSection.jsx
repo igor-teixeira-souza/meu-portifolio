@@ -11,57 +11,17 @@ const certificates = [
   {
     title: "Oracle Database Foundations",
     issuer: "Oracle Academy",
-    date: "2023",
+    date: "2024",
     description: "Fundamentos de bancos de dados relacionais e SQL avançado",
     credentialId: "OC-DBF-2023",
     category: "Banco de Dados"
   },
   {
-    title: "React & TypeScript Mastery",
-    issuer: "Alura",
-    date: "2024",
-    description: "Desenvolvimento avançado com React e TypeScript moderno",
-    credentialId: "AL-REACT-2024",
-    category: "Frontend"
-  },
-  {
-    title: "Frontend Development",
-    issuer: "Rocketseat",
-    date: "2023",
-    description: "Desenvolvimento web completo com React e Node.js",
-    credentialId: "RS-FRONT-2023",
-    category: "Full Stack"
-  },
-  {
-    title: "UI/UX Design Fundamentals",
-    issuer: "Figma & Coursera",
-    date: "2023",
-    description: "Princípios de design de interface e experiência do usuário",
-    credentialId: "FIG-UIUX-2023",
-    category: "Design"
-  },
-  {
-    title: "JavaScript ES6+ Avançado",
-    issuer: "Digital Innovation One",
-    date: "2023",
-    description: "JavaScript moderno, assíncrono e boas práticas",
-    credentialId: "DIO-JS-2023",
-    category: "Linguagens"
-  },
-  {
-    title: "Arduino & IoT Development",
-    issuer: "Cursa",
-    date: "2023",
-    description: "Programação para Arduino, IoT e automação",
-    credentialId: "CRS-ARD-2023",
-    category: "IoT"
-  },
-  {
     title: "Técnico em Desenvolvimento de Sistemas",
     issuer: "SENAI",
-    date: "2022-2023",
+    date: "2024-2025",
     description: "Formação técnica completa em desenvolvimento de software",
-    credentialId: "SENAI-DS-2023",
+    credentialId: "SENAI-DS-2025",
     category: "Formação"
   },
   {

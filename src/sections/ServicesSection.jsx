@@ -22,13 +22,6 @@ const services = [
     details: "React, TypeScript, Tailwind CSS e boas práticas de desenvolvimento"
   },
   {
-    title: "Design 3D & Ilustração",
-    description: "Elementos visuais para interfaces criativas",
-    icon: <PenTool size={24} />,
-    gradient: "from-green-500 to-emerald-500",
-    details: "Modelos 3D, ilustrações e assets visuais personalizados"
-  },
-  {
     title: "Consultoria Técnica",
     description: "Análise e planejamento de soluções",
     icon: <Users size={24} />,
