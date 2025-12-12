@@ -80,7 +80,7 @@ const HeroSection = () => {
 
             <div className="flex items-center gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/igor-teixeira-souza/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative p-4 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-800 hover:border-blue-500 transition-all duration-300 hover:scale-110"
@@ -92,7 +92,7 @@ const HeroSection = () => {
                 />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/igor-teixeira-souza"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative p-4 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-800 hover:border-gray-400 transition-all duration-300 hover:scale-110"

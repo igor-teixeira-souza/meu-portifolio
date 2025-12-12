@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 p-4 md:p-6 flex justify-between items-center text-white bg-black/90 backdrop-blur-md border-b border-gray-800">
+    <header className="fixed top-0 left-0 z-50 p-3 w-full md:p-6 flex justify-between items-center text-white bg-black/90 backdrop-blur-md border-b border-gray-800">
       {/* Logo/Nome */}
       <div className="flex items-center space-x-3">
         <div className="text-xl md:text-3xl font-bold leading-tight">

@@ -9,9 +9,9 @@ import ContactSection from "./sections/ContactSection";
 
 export default function App() {
   return (
-    <div className="scroll-smooth bg-black">
+    <div className="scroll-smooth w-full bg-black">
       <Header />
-      <main>
+      <main className="mt-16 w-full">
         <HeroSection />
         <ServicesSection />
         <TechnologiesSection />

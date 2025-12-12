@@ -3,7 +3,7 @@ import Section from "../ui/Section";
 import Heading from "../ui/Heading";
 import Card from "../ui/Card";
 import CardsGrid from "../ui/CardsGrid";
-import Badge from "../ui/Badge";
+
 import { MapPin, Calendar, GraduationCap, Target, Heart, Rocket } from "lucide-react";
 
 export default function AboutSection() {
