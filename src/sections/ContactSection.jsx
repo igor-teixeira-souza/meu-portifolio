@@ -3,15 +3,8 @@ import Section from "../ui/Section";
 import Heading from "../ui/Heading";
 import Card from "../ui/Card";
 import Button from "../ui/Button";
-import { Mail, MessageSquare, Phone, MapPin, Clock, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, AlertCircle } from "lucide-react";
 import emailjs from '@emailjs/browser';
-
-// Configure suas credenciais do EmailJS aqui
-const EMAILJS_CONFIG = {
-  SERVICE_ID: 'YOUR_SERVICE_ID', // Substitua pelo seu Service ID
-  TEMPLATE_ID: 'YOUR_TEMPLATE_ID', // Substitua pelo seu Template ID
-  PUBLIC_KEY: 'YOUR_PUBLIC_KEY' // Substitua pela sua Public Key
-};
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -95,11 +88,13 @@ export default function ContactSection() {
         reply_to: formData.email
       };
 
+      // AQUI ESTÁ A MUDANÇA PRINCIPAL:
+      // Removemos o quarto parâmetro (PUBLIC_KEY) pois já foi inicializado no main.jsx
       const response = await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        templateParams,
-        EMAILJS_CONFIG.PUBLIC_KEY
+        'service_xkdyb22',     // ← SUBSTITUA pelo seu Service ID real
+        'template_gt4c9ga',    // ← SUBSTITUA pelo seu Template ID real
+        templateParams
+        // NÃO passe o quarto parâmetro aqui!
       );
 
       if (response.status === 200) {
@@ -117,10 +112,10 @@ export default function ContactSection() {
         });
       }
     } catch (error) {
-      console.error('Erro ao enviar email:', error);
+      console.error('Erro detalhado ao enviar email:', error);
       setStatus({ 
         type: 'error', 
-        message: 'Ocorreu um erro ao enviar a mensagem. Tente novamente ou entre em contato por outro meio.' 
+        message: error.text || 'Ocorreu um erro ao enviar a mensagem. Tente novamente ou entre em contato por outro meio.' 
       });
     } finally {
       setLoading(false);

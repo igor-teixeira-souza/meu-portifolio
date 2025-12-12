@@ -1,5 +1,40 @@
 @import "tailwindcss";
 
+body {
+  overflow-y: hidden;
+  width: 100%;
+}
+
+/* Animação do gradiente no texto */
+@keyframes gradient {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+/* Animação de rotação lenta */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
 /*
   Removendo estilos padrão do Vite/React para aplicar o design do portfólio.
   O Tailwind CSS cuidará da estilização base.

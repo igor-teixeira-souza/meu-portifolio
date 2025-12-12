@@ -140,10 +140,6 @@ export default function ServicesSection() {
                 </div>
                 
                 <div className="mt-6">
-                  <button className="group w-full flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-white bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/10">
-                    <span>Saber mais</span>
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                  </button>
                 </div>
               </Card>
             </div>

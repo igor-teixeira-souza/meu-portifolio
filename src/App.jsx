@@ -9,9 +9,9 @@ import ContactSection from "./sections/ContactSection";
 
 export default function App() {
   return (
-    <div className="scroll-smooth w-full bg-black">
+    <div className="min-h-screen w-screen bg-black overflow-x-hidden sm:overflow-x-hidden">
       <Header />
-      <main className="mt-16 w-full">
+      <main className="w-full">
         <HeroSection />
         <ServicesSection />
         <TechnologiesSection />
@@ -22,11 +22,11 @@ export default function App() {
       </main>
       
       {/* Footer simples */}
-      <footer className="py-8 text-center border-t border-gray-900 bg-black">
+      <footer className="py-6 text-center border-t border-gray-900 bg-black px-4">
         <p className="text-gray-500 text-sm">
           © {new Date().getFullYear()} Igor Teixeira. Todos os direitos reservados.
         </p>
-        <p className="text-gray-600 text-sm mt-2">
+        <p className="text-gray-600 text-xs mt-1">
           Desenvolvido com React, Tailwind CSS e muita dedicação.
         </p>
       </footer>

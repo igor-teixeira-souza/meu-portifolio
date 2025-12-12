@@ -51,7 +51,7 @@ const Card = ({
               align === "center" ? "justify-center" : "justify-between"
             } items-start mb-4`}
           >
-            <div className="flex items-center gap-5">
+            <div className="flex w-full items-center gap-5">
               {icon && (
                 <div
                   className={`p-4 rounded-xl bg-gradient-to-br ${gradient} bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300`}
