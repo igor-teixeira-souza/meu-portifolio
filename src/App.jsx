@@ -1,17 +1,17 @@
-import Header from "./sections/Header";
-import HeroSection from "./sections/HeroSection";
-import ServicesSection from "./sections/ServicesSection";
-import TechnologiesSection from "./sections/TechnologiesSection";
-import ProjectsSection from "./sections/ProjectsSection";
 import AboutSection from "./sections/AboutSection";
 import CertificatesSection from "./sections/CertificatesSection";
 import ContactSection from "./sections/ContactSection";
+import Header from "./sections/Header";
+import HeroSection from "./sections/HeroSection";
+import ProjectsSection from "./sections/ProjectsSection";
+import ServicesSection from "./sections/ServicesSection";
+import TechnologiesSection from "./sections/TechnologiesSection";
 
 export default function App() {
   return (
-    <div className="min-h-screen w-screen bg-black overflow-x-hidden sm:overflow-x-hidden">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#121412]">
       <Header />
-      <main className="w-full">
+      <main className="portfolio-content w-full">
         <HeroSection />
         <ServicesSection />
         <TechnologiesSection />
@@ -20,13 +20,14 @@ export default function App() {
         <CertificatesSection />
         <ContactSection />
       </main>
-      
+
       {/* Footer simples */}
-      <footer className="py-6 text-center border-t border-gray-900 bg-black px-4">
-        <p className="text-gray-500 text-sm">
-          © {new Date().getFullYear()} Igor Teixeira. Todos os direitos reservados.
+      <footer className="border-t border-white/10 bg-[#121412] px-4 py-8 text-center sm:py-10">
+        <p className="text-sm text-[#b9b9ab]">
+          © {new Date().getFullYear()} Igor Teixeira. Todos os direitos
+          reservados.
         </p>
-        <p className="text-gray-600 text-xs mt-1">
+        <p className="mt-2 text-xs text-[#777b72]">
           Desenvolvido com React, Tailwind CSS e muita dedicação.
         </p>
       </footer>

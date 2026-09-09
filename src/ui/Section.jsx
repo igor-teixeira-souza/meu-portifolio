@@ -1,29 +1,29 @@
-import React from "react";
 import Container from "./Container";
 
-const Section = ({ 
-  children, 
+const Section = ({
+  children,
   id,
   className = "",
   background = "default",
   padding = true,
-  fullWidth = false
+  fullWidth = false,
 }) => {
   const backgrounds = {
-    default: "bg-transparent",
-    gradient: "bg-gradient-to-b from-[#0f172a] to-[#1e293b]",
-    dark: "bg-gray-900",
-    light: "bg-white",
-    custom: ""
+    default: "bg-[#121412]",
+    gradient: "bg-[#1c211d]",
+    dark: "bg-[#121412]",
+    light: "bg-[#f4f1e8]",
+    custom: "",
   };
 
   return (
-    <section 
+    <section
       id={id}
       className={`
         ${backgrounds[background]} 
-        ${padding ? 'py-12 md:py-20' : ''}
-        ${fullWidth ? 'w-full' : ''}
+        border-b border-white/[0.06]
+        ${padding ? "py-4 md:py-8" : ""}
+        ${fullWidth ? "w-full" : ""}
         ${className}
       `}
     >

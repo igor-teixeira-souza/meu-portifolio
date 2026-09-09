@@ -1,139 +1,140 @@
-import React, { useState } from "react";
-import Section from "../ui/Section";
-import Heading from "../ui/Heading";
+import {
+  Atom,
+  Brain,
+  ChevronDown,
+  Code2,
+  Cpu,
+  Database,
+  FileText,
+  GitBranch,
+  Globe,
+  Layers,
+  Rocket,
+  Server,
+  Smartphone,
+  Sparkles,
+  TerminalSquare,
+  TrendingUp,
+  Wind,
+  Zap,
+} from "lucide-react";
+import { useState } from "react";
+import Badge from "../ui/Badge";
 import Card from "../ui/Card";
 import CardsGrid from "../ui/CardsGrid";
-import Badge from "../ui/Badge";
-import IconBox from "../ui/IconBox";
-import { 
-  Server, CpuIcon, Database, FileText, 
-  Smartphone, Zap, Globe, Palette, 
-  Atom, Wind, Code2, Terminal, 
-  Layers, Filter, ChevronDown, Sparkles,
-  TrendingUp, Brain, Rocket, GitBranch,
-  Code, TerminalSquare, Wrench, Cpu
-} from "lucide-react";
+import Heading from "../ui/Heading";
+import Section from "../ui/Section";
 
 const technologies = [
-  { 
-    name: "Node.js", 
-    icon: <Server size={20} />, 
+  {
+    name: "Node.js",
+    icon: <Server size={20} />,
     level: "Intermediário",
     description: "APIs RESTful e aplicações server-side com JavaScript",
     color: "from-green-500 to-emerald-600",
     bgColor: "bg-green-500/10",
     category: "Backend",
-    priority: 1
+    priority: 1,
   },
-  { 
-    name: "React.js", 
-    icon: <Atom size={20} />, 
+  {
+    name: "React.js",
+    icon: <Atom size={20} />,
     level: "Avançado",
     description: "Interfaces modernas, reativas e componentizadas",
     color: "from-blue-400 to-cyan-500",
     bgColor: "bg-blue-500/10",
     category: "Frontend",
-    priority: 1
+    priority: 1,
   },
-  { 
-    name: "Oracle Database", 
-    icon: <Database size={20} />, 
+  {
+    name: "Oracle Database",
+    icon: <Database size={20} />,
     level: "Oracle Certified",
     description: "Modelagem de dados, SQL avançado e administração Oracle",
     color: "from-orange-500 to-amber-600",
     bgColor: "bg-orange-500/10",
     category: "Backend",
-    priority: 1
+    priority: 1,
   },
-  { 
-    name: "Tailwind CSS", 
-    icon: <Wind size={20} />, 
+  {
+    name: "Tailwind CSS",
+    icon: <Wind size={20} />,
     level: "Avançado",
     description: "Interfaces responsivas com classes utilitárias",
     color: "from-teal-500 to-emerald-600",
     bgColor: "bg-teal-500/10",
     category: "Frontend",
-    priority: 2
+    priority: 2,
   },
-  { 
-    name: "JavaScript", 
-    icon: <Code2 size={20} />, 
+  {
+    name: "JavaScript",
+    icon: <Code2 size={20} />,
     level: "Intermediário",
     description: "Linguagem principal para desenvolvimento full-stack",
     color: "from-yellow-400 to-amber-500",
     bgColor: "bg-yellow-500/10",
     category: "Linguagens",
-    priority: 1
+    priority: 1,
   },
-  { 
-    name: "Git & GitHub", 
-    icon: <GitBranch size={20} />, 
+  {
+    name: "Git & GitHub",
+    icon: <GitBranch size={20} />,
     level: "Intermediário",
     description: "Controle de versão, colaboração em equipe e CI/CD",
     color: "from-gray-600 to-gray-800",
     bgColor: "bg-gray-500/10",
     category: "Ferramentas",
-    priority: 2
+    priority: 2,
   },
-  { 
-    name: "HTML5 & CSS3", 
-    icon: <Globe size={20} />, 
+  {
+    name: "HTML5 & CSS3",
+    icon: <Globe size={20} />,
     level: "Avançado",
     description: "Estrutura semântica e estilização moderna para web",
     color: "from-red-500 to-rose-600",
     bgColor: "bg-red-500/10",
     category: "Frontend",
-    priority: 2
+    priority: 2,
   },
-  { 
-    name: "Arduino", 
-    icon: <Cpu size={20} />, 
+  {
+    name: "Arduino",
+    icon: <Cpu size={20} />,
     level: "Intermediário",
     description: "Soluções IoT, automação e prototipagem eletrônica",
     color: "from-blue-500 to-cyan-600",
     bgColor: "bg-blue-500/10",
     category: "IoT",
-    priority: 3
+    priority: 3,
   },
-  { 
-    name: "Power Platform", 
-    icon: <Zap size={20} />, 
+  {
+    name: "Power Platform",
+    icon: <Zap size={20} />,
     level: "Intermediário",
     description: "Aplicações empresariais com Microsoft Power Apps",
     color: "from-yellow-500 to-orange-600",
     bgColor: "bg-yellow-500/10",
     category: "Low Code",
-    priority: 3
+    priority: 3,
   },
-  { 
-    name: "React Native", 
-    icon: <Smartphone size={20} />, 
+  {
+    name: "React Native",
+    icon: <Smartphone size={20} />,
     level: "Básico",
     description: "Aplicativos mobile multiplataforma",
     color: "from-cyan-500 to-blue-600",
     bgColor: "bg-cyan-500/10",
     category: "Mobile",
-    priority: 3
+    priority: 3,
   },
-  { 
-    name: "Análise de Requisitos", 
-    icon: <FileText size={20} />, 
+  {
+    name: "Análise de Requisitos",
+    icon: <FileText size={20} />,
     level: "Intermediário",
     description: "Levantamento, documentação e modelagem de requisitos",
     color: "from-purple-500 to-pink-600",
     bgColor: "bg-purple-500/10",
     category: "Processos",
-    priority: 2
-  },
-  { 
-    name: "TypeScript", 
-    icon: <Code size={20} />, 
-    level: "Intermediário",
-    description: "JavaScript com tipagem estática para maior robustez",
-    color: "from-blue-500 to-blue-700",
-    bgColor: "bg-blue-500/10",
-    category: "Linguagens",
-    priority: 2
+    priority: 2,
   },
 ];
 
@@ -150,30 +151,37 @@ export default function TechnologiesSection() {
   const [showAll, setShowAll] = useState(false);
 
   // Função corrigida para filtrar tecnologias
-  const filteredTechnologies = technologies.filter(tech => {
+  const filteredTechnologies = technologies.filter((tech) => {
     if (selectedCategory === "all") return true;
-    
+
     // Mapear o ID da categoria para o nome correto da categoria
     const categoryMap = {
-      "frontend": "Frontend",
-      "backend": "Backend", 
-      "linguagens": "Linguagens",
-      "processos": "Processos",
+      frontend: "Frontend",
+      backend: "Backend",
+      linguagens: "Linguagens",
+      processos: "Processos",
     };
-    
+
     const categoryName = categoryMap[selectedCategory];
     return tech.category === categoryName;
   });
 
-  const displayedTechnologies = showAll ? filteredTechnologies : filteredTechnologies.filter(tech => tech.priority <= 2);
+  const displayedTechnologies = showAll
+    ? filteredTechnologies
+    : filteredTechnologies.filter((tech) => tech.priority <= 2);
 
   const getLevelColor = (level) => {
-    switch(level) {
-      case 'Avançado': return 'bg-green-500/20 text-green-400 border-green-500/30';
-      case 'Oracle Certified': return 'bg-orange-500/20 text-orange-400 border-orange-500/30';
-      case 'Intermediário': return 'bg-blue-500/20 text-blue-400 border-blue-500/30';
-      case 'Básico': return 'bg-gray-500/20 text-gray-400 border-gray-500/30';
-      default: return 'bg-gray-500/20 text-gray-400';
+    switch (level) {
+      case "Avançado":
+        return "bg-green-500/20 text-green-400 border-green-500/30";
+      case "Oracle Certified":
+        return "bg-orange-500/20 text-orange-400 border-orange-500/30";
+      case "Intermediário":
+        return "bg-blue-500/20 text-blue-400 border-blue-500/30";
+      case "Básico":
+        return "bg-gray-500/20 text-gray-400 border-gray-500/30";
+      default:
+        return "bg-gray-500/20 text-gray-400";
     }
   };
 
@@ -200,8 +208,8 @@ export default function TechnologiesSection() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-full border transition-all whitespace-nowrap ${
                   selectedCategory === category.id
-                    ? 'bg-blue-500/20 border-blue-500/50 text-white shadow-lg shadow-blue-500/20'
-                    : 'bg-gray-800/50 border-gray-700 text-gray-300 hover:bg-gray-700/50 hover:border-gray-600'
+                    ? "bg-blue-500/20 border-blue-500/50 text-white shadow-lg shadow-blue-500/20"
+                    : "bg-gray-800/50 border-gray-700 text-gray-300 hover:bg-gray-700/50 hover:border-gray-600"
                 }`}
               >
                 {category.icon}
@@ -214,10 +222,7 @@ export default function TechnologiesSection() {
         {/* Cards de Tecnologias com layout correto */}
         <CardsGrid cols={3} gap="gap-4 sm:gap-6">
           {displayedTechnologies.map((tech) => (
-            <div
-              key={`${tech.name}-${tech.category}`}
-              className="group h-full"
-            >
+            <div key={`${tech.name}-${tech.category}`} className="group h-full">
               <Card
                 className="h-full hover:scale-[1.02] transition-all duration-300 p-5 hover:shadow-lg hover:shadow-blue-500/5 border border-gray-800 hover:border-gray-700"
                 gradient="from-gray-900 to-gray-950"
@@ -226,27 +231,37 @@ export default function TechnologiesSection() {
                 <div className="flex flex-col h-full">
                   {/* Cabeçalho do card */}
                   <div className="flex items-start gap-3 mb-3">
-                    <div className={`p-2 rounded-lg ${tech.bgColor} flex-shrink-0`}>
-                      <div className={`text-white bg-gradient-to-br ${tech.color} p-2 rounded-lg`}>
+                    <div
+                      className={`p-2 rounded-lg ${tech.bgColor} flex-shrink-0`}
+                    >
+                      <div
+                        className={`text-white bg-gradient-to-br ${tech.color} p-2 rounded-lg`}
+                      >
                         {tech.icon}
                       </div>
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex justify-between items-start gap-2">
-                        <h4 className="text-lg font-semibold text-white truncate">{tech.name}</h4>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getLevelColor(tech.level)} whitespace-nowrap flex-shrink-0`}>
+                        <h4 className="text-lg font-semibold text-white truncate">
+                          {tech.name}
+                        </h4>
+                        <span
+                          className={`px-2 py-1 rounded-full text-xs font-medium border ${getLevelColor(tech.level)} whitespace-nowrap flex-shrink-0`}
+                        >
                           {tech.level}
                         </span>
                       </div>
-                      <p className="text-gray-400 text-sm mt-2 line-clamp-3">{tech.description}</p>
+                      <p className="text-gray-400 text-sm mt-2 line-clamp-3">
+                        {tech.description}
+                      </p>
                     </div>
                   </div>
-                  
+
                   {/* Rodapé do card */}
                   <div className="mt-auto pt-4 border-t border-gray-800/50 flex justify-between items-center">
-                    <Badge 
-                      color="gray" 
-                      variant="subtle" 
+                    <Badge
+                      color="gray"
+                      variant="subtle"
                       size="sm"
                       className="bg-gray-800/50"
                     >
@@ -254,7 +269,13 @@ export default function TechnologiesSection() {
                     </Badge>
                     <div className="flex items-center gap-2 text-xs text-gray-500">
                       <TrendingUp size={12} />
-                      <span>{tech.priority === 1 ? 'Alto' : tech.priority === 2 ? 'Médio' : 'Explorando'}</span>
+                      <span>
+                        {tech.priority === 1
+                          ? "Alto"
+                          : tech.priority === 2
+                            ? "Médio"
+                            : "Explorando"}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -272,13 +293,21 @@ export default function TechnologiesSection() {
             >
               {showAll ? (
                 <>
-                  <ChevronDown size={18} className="rotate-180 group-hover:-translate-y-0.5 transition-transform" />
+                  <ChevronDown
+                    size={18}
+                    className="rotate-180 group-hover:-translate-y-0.5 transition-transform"
+                  />
                   <span>Mostrar menos</span>
                 </>
               ) : (
                 <>
-                  <span>Ver todas as tecnologias ({filteredTechnologies.length})</span>
-                  <ChevronDown size={18} className="group-hover:translate-y-0.5 transition-transform" />
+                  <span>
+                    Ver todas as tecnologias ({filteredTechnologies.length})
+                  </span>
+                  <ChevronDown
+                    size={18}
+                    className="group-hover:translate-y-0.5 transition-transform"
+                  />
                 </>
               )}
             </button>
@@ -292,34 +321,43 @@ export default function TechnologiesSection() {
               <div className="p-3 rounded-xl bg-blue-500/20">
                 <Brain className="text-blue-400" size={24} />
               </div>
-              <h3 className="text-xl font-semibold text-white">Aprendizado Contínuo</h3>
+              <h3 className="text-xl font-semibold text-white">
+                Aprendizado Contínuo
+              </h3>
             </div>
             <p className="text-gray-400">
-              Mantenho-me atualizado com as últimas tendências e melhores práticas do desenvolvimento moderno.
+              Mantenho-me atualizado com as últimas tendências e melhores
+              práticas do desenvolvimento moderno.
             </p>
           </div>
-          
+
           <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20">
             <div className="flex items-center gap-4 mb-4">
               <div className="p-3 rounded-xl bg-purple-500/20">
                 <Rocket className="text-purple-400" size={24} />
               </div>
-              <h3 className="text-xl font-semibold text-white">Foco em Resultados</h3>
+              <h3 className="text-xl font-semibold text-white">
+                Foco em Resultados
+              </h3>
             </div>
             <p className="text-gray-400">
-              Escolho as ferramentas mais adequadas para cada projeto, garantindo eficiência e qualidade.
+              Escolho as ferramentas mais adequadas para cada projeto,
+              garantindo eficiência e qualidade.
             </p>
           </div>
-          
+
           <div className="p-6 rounded-2xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20">
             <div className="flex items-center gap-4 mb-4">
               <div className="p-3 rounded-xl bg-green-500/20">
                 <Sparkles className="text-green-400" size={24} />
               </div>
-              <h3 className="text-xl font-semibold text-white">Versatilidade</h3>
+              <h3 className="text-xl font-semibold text-white">
+                Versatilidade
+              </h3>
             </div>
             <p className="text-gray-400">
-              Domínio em múltiplas áreas, desde desenvolvimento web até IoT e soluções low-code.
+              Domínio em múltiplas áreas, desde desenvolvimento web até IoT e
+              soluções low-code.
             </p>
           </div>
         </div>
@@ -334,11 +372,11 @@ export default function TechnologiesSection() {
               Stack em Constante Evolução
             </h3>
             <p className="text-gray-400 text-lg">
-              Meu conjunto de habilidades está sempre expandindo para acompanhar as demandas do mercado 
-              e as necessidades dos projetos.
+              Meu conjunto de habilidades está sempre expandindo para acompanhar
+              as demandas do mercado e as necessidades dos projetos.
             </p>
-            <Badge 
-              color="blue" 
+            <Badge
+              color="blue"
               variant="subtle"
               className="mt-2 bg-blue-500/20 border-blue-500/30"
             >

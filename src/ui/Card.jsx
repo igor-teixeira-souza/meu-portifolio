@@ -1,5 +1,3 @@
-import React from "react";
-
 const Card = ({
   children,
   title,
@@ -21,13 +19,13 @@ const Card = ({
   const cardContent = (
     <div
       className={`
-      group relative bg-gray-900/50 backdrop-blur-sm 
-      rounded-2xl ${padding ? "p-5" : ""} 
-      ${border ? "border border-gray-800" : ""}
-      transition-all duration-500 h-full 
+      group relative bg-[#202720] 
+      rounded-xl ${padding ? "p-6 sm:p-7 lg:p-8" : ""} 
+      ${border ? "border border-white/10" : ""}
+      transition-all duration-300 h-full 
       ${
         hoverEffect
-          ? "hover:border-transparent hover:scale-105 hover:shadow-2xl"
+          ? "hover:-translate-y-1 hover:border-[#a8e6cf]/40 hover:shadow-2xl hover:shadow-black/20"
           : ""
       }
       ${className}
@@ -37,9 +35,9 @@ const Card = ({
       {hoverEffect && (
         <>
           <div
-            className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl`}
+            className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-xl`}
           ></div>
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500"></div>
+          <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-transparent via-[#a8e6cf]/20 to-transparent opacity-0 blur transition duration-500 group-hover:opacity-100"></div>
         </>
       )}
 
@@ -51,20 +49,22 @@ const Card = ({
               align === "center" ? "justify-center" : "justify-between"
             } items-start mb-4`}
           >
-            <div className="flex w-full items-center gap-5">
+            <div className="flex w-full items-center gap-5 lg:gap-6">
               {icon && (
                 <div
-                  className={`p-4 rounded-xl bg-gradient-to-br ${gradient} bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300`}
+                  className={`rounded-lg bg-gradient-to-br ${gradient} p-3 bg-opacity-20 transition-all duration-300 group-hover:bg-opacity-30`}
                 >
                   {icon}
                 </div>
               )}
               <div className={`text-${align}`}>
                 {title && (
-                  <h3 className="text-xl font-bold text-white">{title}</h3>
+                  <h3 className="text-xl font-bold tracking-tight text-[#f4f1e8] sm:text-2xl">
+                    {title}
+                  </h3>
                 )}
                 {subtitle && (
-                  <p className="text-gray-400 text-sm mt-1">{subtitle}</p>
+                  <p className="mt-1 text-base text-[#9fa59b]">{subtitle}</p>
                 )}
               </div>
             </div>
@@ -91,7 +91,9 @@ const Card = ({
         )}
 
         {/* Content */}
-        <div className={`flex-1 text-${align}`}>{children}</div>
+        <div className={`portfolio-card-content flex-1 text-${align}`}>
+          {children}
+        </div>
 
         {/* Footer */}
         {footer && (
